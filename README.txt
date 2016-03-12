@@ -1,0 +1,1 @@
+I am intentionally excluding the PHP files associated with database requests. This will have no effect on the current version of the toolkit except for causing all inventory/owned character processes to fail silently.

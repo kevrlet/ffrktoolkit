@@ -1,0 +1,410 @@
+body {
+	overflow: auto;
+	background-color: #000000;
+	color: #f2f2f2;
+}
+header {
+	height: 150px;
+}
+
+/* New Body Stuff */
+.bodyContainer {
+	border: 1px solid #737373;
+	background-color: #464646;
+	padding: 20px 20px 20px 20px;
+}
+.rightContainer {
+	border: 1px solid #737373;
+	background-color: #464646;
+	padding: 20px 20px 20px 20px;	
+	margin: 0px 0px 20px 20px;
+}
+.beseparator {
+	border: 1px solid #737373;
+	background-color: #333333;
+	padding: 5px 5px 5px 5px;
+}
+.eseparator {
+	height: 20px;
+}
+.newsContainer {
+	border: 1px solid #737373;
+	min-height: 150px;
+	background-color: #333333;
+	color: #f2f2f2;
+}
+.newsTitle {
+	margin: 0px 0px 10px;
+	font-size: 1.5em;
+	text-align: center;
+	background-color: #464646;
+}
+.newsDate { 
+	border: 1px solid #737373;
+	float: left;
+	margin: 0px 10px 10px 0px;
+	padding: 0px 10px 5px;
+	width: 35px;
+	height: 70px;
+	font-weight: bold;
+	text-align: center;
+	margin-left: -20px;
+}
+.newsMonth {
+	padding: 10px 0px 5px !important;
+	margin: 0px -10px 0px !important;
+	text-transform: uppercase;
+	background-color: #464646;
+}
+.newsDay {
+	padding: 0px 0px 5px !important;
+	margin: -2px -10px 0px !important;
+	text-transform: uppercase;
+	font-size: 26px;
+	height: 35px;
+	background-color: #333333;
+}
+.newsText { 
+	margin-left: 25px;
+}
+.newsName {
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	border-bottom: 1px dashed #464646;
+}
+a {
+	color: #f2f2f2 !important;
+}
+.navbar li,
+.navbar span,
+.navbar ul,
+.dropdown li,
+.dropdown ul {
+	color: #f2f2f2 !important;
+	background-color: #464646;
+}
+.navbar {
+	border: 1px solid #737373;
+	background-color: #464646;
+	color: #f2f2f2;
+}
+a:hover,
+span:hover,
+li:hover,
+.navbar .nav > li.dropdown.open > a {
+   background-color: #595959 !important;
+}
+
+.fixed {
+    position: fixed;
+}
+
+/* Stuff */
+
+.centerMe {
+	padding: 7px 0px 0px 0px;
+}
+.centerButton {
+	padding: 8px 0px 0px 0px;
+}
+.active {
+	background-color: #1f2f1f;
+	color: #ffffff;
+}
+
+.table {
+  border: 1px solid #3c3c3c;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+   border: 1px solid #3c3c3c;
+}
+
+/* character defines */
+.charPic {
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	background-size: 96px 96px;
+	text-align: center;
+	vertical-align: text-bottom;
+	height: 160px;
+	max-width: 96px;
+}
+.charBox {
+	border: 1px solid #3c3c3c;
+	padding: 0px 0px 0px 0px;
+}
+.charPicLarge {
+	margin: auto;
+	width: 192px;
+	height: 192px;
+}
+.charName {
+	text-align: center;
+	height: 20px;
+	font-size: 20px;
+	padding: 0px 0px 0px 0px;
+}
+.charStat {
+	text-align: center;
+	min-height: 35px;
+	border: 1px solid #3c3c3c;
+	padding: 5px 0px 5px 0px;
+}
+.charStatName {
+	text-align: center;
+	height: 35px;
+	border: 1px solid #3c3c3c;
+	padding: 5px 0px 5px 0px;
+}
+.star_img {
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	background-size: 64px 42px;
+	width: 64px;
+	height: 42px;
+}
+.dd_ability {
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	background-size: 64px 64px;
+	width: 64px;
+	height: 64px;
+}
+.ownedTextBox {
+	transform: rotate(90deg);
+	transform-origin: 0 20px 0;
+	padding-left: 20px;
+}
+.char-owned {
+	width: 20px;
+	top: 2px;
+}
+.compCell {
+	text-align: center;
+	min-height: 35px;
+	min-width: 45px;
+	border: 1px solid #3c3c3c;
+	padding: 5px 0px 5px 0px;
+}
+
+/* item + ability defines */
+.fixWidth {
+	min-width: 877px!important;
+}
+.synergyHi {
+	color: #00cccc!important;
+}
+.sortedHi {
+	color: #66FF66!important;
+}
+.statHi {
+	color: #52CC52!important;
+}
+.itemCell {
+	text-align: left;
+	padding: 5px 0px 5px 0px;
+}
+.sbCell {
+	text-align: left;
+	padding: 5px 0px 5px 0px;
+}
+.statCell {
+	text-align: center;
+	padding: 5px 0px 5px 0px;
+}
+.itemClear {
+	clear: left;
+}
+.typeCell {
+	text-align: center;
+	height: 35px;
+	min-width: 170px;
+	border: 1px solid #3c3c3c;
+	padding: 0px 10px 0px 10px;
+}
+.sbRarityCell {
+	text-align: center;
+	height: 35px;
+	min-width: 225px;
+	border: 1px solid #3c3c3c;
+	padding: 0px 10px 0px 10px;
+}
+.elementCell {
+	text-align: center;
+	height: 35px;
+	min-width: 85px;
+	border: 1px solid #3c3c3c;
+	padding: 0px 10px 0px 10px;
+}
+.effectCell {
+	text-align: center;
+	height: 35px;
+	min-width: 350px;
+	border: 1px solid #3c3c3c;
+	padding: 0px 10px 0px 10px;
+}
+.ownedBox {
+	text-align: center;
+	min-width: 55px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 22px 22px;
+	border: 1px solid #3c3c3c;
+}
+.sortBG {
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+
+/* Dungeon defines */
+.dunPic {
+	/*width: 346px;
+	height: 183px;*/
+	height: 210px;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.dunCell {
+	text-align: center;
+	min-height: 37px;
+}
+.reward, .boss, .item {
+	padding: 0px;
+}
+.icon-right{
+    position: absolute;
+    right: 20px;
+    top: 6px;
+    font-size: 20px;
+}
+.dungeon{
+    padding: 0px;
+    margin-bottom: 15px;
+    box-shadow: 2px 3px 4px #666;
+}
+.item-sm {
+	width: 33px;
+}
+.item-xs-left {
+	width: 33px;
+}
+.sb-xs-left {
+	width: 44px;
+}
+.dunCellHeader {
+	text-align: center;
+	height: 35px;
+	width: 173px;
+	border: 1px solid #3c3c3c;
+	padding: 0px 10px 0px 10px;
+	background-repeat: no-repeat;
+	background-position: 20px center;
+}
+.spacer {
+	text-align: center;
+	height: 35px;
+	width: 173px;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+/* Misc defines */
+
+.charCell {
+	text-align: center;
+	min-width: 40px;
+}
+.th {
+	background-color: #1f1f1f;
+	color: #ffffff;
+}
+.thd {
+	background-color: #0F0F0F;
+	color: #ffffff;
+}
+.td {
+	background-color: #2e2e2e;
+	color: #ffffff;
+}
+.thSelected,
+.thHover {
+	background-color: #1f2f1f;
+	color: #ffffff;
+}
+.tdSelected,
+.tdHover {
+	background-color: #2e3e2e;
+	color: #ffffff;
+}
+table.mainTable {
+	float: none;
+	border-collapse: collapse;
+	margin: 0 auto 15px auto;
+}
+a:hover,
+li:hover,
+.cellHover {
+  background-color: #dcdcdc;
+}
+.centering {
+	float: none;
+	margin: 0 auto;
+}
+.lefting {
+	float: none;
+	margin: 0 0;
+}
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+.statTable {
+	padding: 3px 0px 0px 0px;
+}
+/* Login defines */
+.form-signin {
+  /*max-width: 150px;*/
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 12px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.loginErrors {
+	color: red !important;
+}
+.putitUnder {
+	z-index: 1;
+}

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>Kevrlet's FFRK Toolkit</title>
+
+		<!-- CSS files -->
+		<link href="dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="custom.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	
+	<header>
+	</header>
+
+	<body>
+		<div class="col-xs-1"></div>
+		<div class="row col-xs-14">
+			<nav class="navbar navbar-default navbar-static-top" id="topNav">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="javascript:showNews()">FFRK Toolkit</a>
+						&nbsp;
+					</div>
+					<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Characters <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+										<li><a href="javascript:listChars()">Overviews</a></li>
+										<li><a href="javascript:listMateria()">Record Materia</a></li>
+										<li><a href="javascript:listCharsByItem(0)">Usable Item Types</a></li>
+										<li><a href="javascript:listCharsByAbility(0)">Usable Ability Types</a></li>
+										<li><a href="javascript:charComparison()">Comparison</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Items <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<span class="dropdown-header">Show All</span>
+										<li><a href="javascript:listItemsByType(0)">By Type</a></li>
+										<li><a href="javascript:listItemsBySlot(0)">By Slot</a></li>
+										<li class="divider"></li>
+									<span class="dropdown-header">Usable by Current Character</span>
+										<li><a href="javascript:listItemsByType(1)">By Type</a></li>
+										<li><a href="javascript:listItemsBySlot(1)">By Slot</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Abilities <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<span class="dropdown-header">Show All</span>
+										<li><a href="javascript:listAbilities(0)">By Type</a></li>
+									<li role="separator" class="divider"></li>
+									<span class="dropdown-header">Usable by Current Character</span>
+										<li><a href="javascript:listAbilities(1)">By Type</a></li>
+									<li role="separator" class="divider"></li>
+										<li><a href="javascript:listSBs()">Soul Breaks</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dungeons <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<span class="dropdown-header">Classic</span>
+									<li><a href="javascript:popDunByRealm('Classic')">By Realm</a></li>
+									<li><a href="#">By Difficulty</a></li>
+									<li role="separator" class="divider"></li>
+									<span class="dropdown-header">Elite</span>
+									<li><a href="javascript:popDunByRealm('Elite')">By Realm</a></li>
+									<li><a href="#">By Difficulty</a></li>
+									<li role="separator" class="divider"></li>
+									<span class="dropdown-header">Weekly</span>
+									<li><a href="javascript:popDunByRealm('Weekly')">By Day</a></li>
+									<li role="separator" class="divider"></li>
+									<span class="dropdown-header">Misc</span>
+									<li><a href="javascript:dunEXP()">EXP</a></li>
+									<li><a href="javascript:listQuests()">Quests</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Events <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<span class="dropdown-header">Current</span>
+									<li><a href="javascript:popDunByRealm('A Meeting Beyond Time')" id="curr1">A Meeting Beyond Time<br>
+										<div><span id="timer1"></span></div>
+									</a></li>
+									<li><a href="javascript:popDunByRealm('Relics of Light')" id="curr2">Relics of Light<br>
+										<div><span id="timer2"></span></div>
+									</a></li>
+									<li><a href="javascript:popDunByRealm('The Lone Wolf\'s Lament')" id="curr3">The Lone Wolf's Lament<br>
+										<div><span id="timer3"></span></div>
+									</a></li>
+									<li role="separator" class="divider"></li>
+									<span class="dropdown-header">Passed</span>
+									<li><a href="javascript:popDunByRealm('Challenge')">Challenge</a></li>
+									<li><a href="javascript:popDunByRealm('Survival')">Survival</a></li>
+									<li><a href="javascript:popDunByRealm('Collection')">Collection</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact Me <span class="caret"></span></a>
+								<ul class="dropdown-menu scrollable-menu">
+									<li><a href="https://www.reddit.com/message/compose/?to=Kevrlet">Reddit</a></li>
+									<li><a href="mailto:kevrlet@gmail.com">Email</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<div class="col-xs-12" id="customTables"></div>
+			<div class="col-xs-12" id="News">
+				<div class="bodyContainer">
+					<div class="section sectionMain recentNews">
+						<div class="beseparator">
+							<div class="newsContainer leftDate">
+								<div>
+									<h2 class="newsTitle">Data Conversion</h2>
+								</div>
+
+								<div class="newsDate">
+									<div class="newsMonth heading">Feb</div>
+									<div class="newsDay">16</div>
+								</div>
+								
+								<div>
+									<div class="newsName">by <a href='https://www.reddit.com/u/Kevrlet'>Kevrlet</a> at 10:27 AM GMT-6</span></div>
+
+									<div class="newsText">While working on the party builder I realized I need to get my data out of javascript files. It's killing performance. I'm working on converting it all to MySQL, and will resume work on everything else after this</div>
+								</div>
+							</div>
+						</div>
+						<div class="eseparator"></div>
+						<div class="beseparator">
+							<div class="newsContainer leftDate">
+								<div>
+									<h2 class="newsTitle">Delays</h2>
+								</div>
+
+								<div class="newsDate">
+									<div class="newsMonth heading">Feb</div>
+									<div class="newsDay">9</div>
+								</div>
+								
+								<div>
+									<div class="newsName">by <a href='https://www.reddit.com/u/Kevrlet'>Kevrlet</a> at 11:24 PM GMT-6</span></div>
+
+									<div class="newsText">I got sideswiped by some unexpected projects. Improvements to the site will probably be delayed a bit, but I'll try to push them out ASAP</div>
+								</div>
+							</div>
+						</div>
+						<div class="eseparator"></div>
+						<div class="beseparator">
+							<div class="newsContainer leftDate">
+								<div>
+									<h2 class="newsTitle">Event Data</h2>
+								</div>
+
+								<div class="newsDate">
+									<div class="newsMonth heading">Feb</div>
+									<div class="newsDay">5</div>
+								</div>
+								
+								<div>
+									<div class="newsName">by <a href='https://www.reddit.com/u/Kevrlet'>Kevrlet</a> at 8:08 PM GMT-6</span></div>
+
+									<div class="newsText">I will not be updating Tempered Resolve's data until after the Orbfest</div>
+								</div>
+							</div>
+						</div>
+						<div class="eseparator"></div>
+						<div class="beseparator">
+							<div class="newsContainer leftDate">
+								<div>
+									<h2 class="newsTitle">Rewriting Finished (?)</h2>
+								</div>
+
+								<div class="newsDate">
+									<div class="newsMonth heading">Feb</div>
+									<div class="newsDay">2</div>
+								</div>
+								
+								<div>
+									<div class="newsName">by <a href='https://www.reddit.com/u/Kevrlet'>Kevrlet</a> at 12:01 AM GMT-6</span></div>
+
+									<div class="newsText">I think I finished fixing everything. Let me know if I broke anything. Going to start working on the Party Builder today.
+									<br>Also I will probably knock out the My Account code finally...because I've been slacking on that for ages</div>
+								</div>
+							</div>
+						</div>
+						<div class="eseparator"></div>
+						<div class="beseparator">
+							<div class="newsContainer leftDate">
+								<div>
+									<h2 class="newsTitle">Some More Rewritten</h2>
+								</div>
+
+								<div class="newsDate">
+									<div class="newsMonth heading">Feb</div>
+									<div class="newsDay">1</div>
+								</div>
+								
+								<div>
+									<div class="newsName">by <a href='https://www.reddit.com/u/Kevrlet'>Kevrlet</a> at 5:46 PM GMT-6</span></div>
+
+									<div class="newsText">I finished rewriting the Materia, Ability and Soul Break code. Just a few more things left before I start diving into the Party Builder full-time</div>
+								</div>
+							</div>
+						</div>
+						<div class="eseparator"></div>
+						<div class="beseparator">
+							<div class="newsContainer leftDate">
+								<div>
+									<h2 class="newsTitle">More Improved Code</h2>
+								</div>
+
+								<div class="newsDate">
+									<div class="newsMonth heading">Jan</div>
+									<div class="newsDay">31</div>
+								</div>
+								
+								<div>
+									<div class="newsName">by <a href='https://www.reddit.com/u/Kevrlet'>Kevrlet</a> at 6:50 PM</span></div>
+
+									<div class="newsText">I've completely re-written the Dungeon and Item code. I don't think I missed any bugs, but let me know if you find any
+									<br>I'm aware the Materia, Usable Item and Usable Ability code is ugly on the new site scheme. I'm going to rewrite it soon-ish</div>
+								</div>
+							</div>
+						</div>
+						<div class="eseparator"></div>
+						<div class="beseparator">
+							<div class="newsContainer leftDate">
+								<div>
+									<h2 class="newsTitle">Website Update</h2>
+								</div>
+
+								<div class="newsDate">
+									<div class="newsMonth heading">Jan</div>
+									<div class="newsDay">25</div>
+								</div>
+								
+								<div>
+									<div class="newsName">by <a href='https://www.reddit.com/u/Kevrlet'>Kevrlet</a> at 10:47 PM GMT-6</span></div>
+
+									<div class="newsText">I got rid of the bottom bar. It was pissing me off. The content it used to host will now show up as a side bar when you're on an item list page. I've also made the first few steps towards making the site something other than a bunch of white pages with black boxes
+									<br><br>The site is slightly less mobile-friendly at the moment because of the new side bar content. I'll fix this eventually</div>
+								</div>
+							</div>
+						</div>
+						<div class="eseparator"></div>
+						<div class="beseparator">
+							<div class="newsContainer leftDate">
+								<div>
+									<h2 class="newsTitle">Improved Event Timers</h2>
+								</div>
+
+								<div class="newsDate">
+									<div class="newsMonth heading">Jan</div>
+									<div class="newsDay">23</div>
+								</div>
+								
+								<div>
+									<div class="newsName">by <a href='https://www.reddit.com/u/Kevrlet'>Kevrlet</a> at ?:?? PM</span></div>
+
+									<div class="newsText">The Event timers now auto-adjust for timezones and DST changes, and auto-hide events that are finished</div>
+								</div>
+							</div>
+						</div>
+						<div class="eseparator"></div>
+						<div class="beseparator">
+							<div class="newsContainer leftDate">
+								<div>
+									<h2 class="newsTitle">Dungeon Code Reworked</h2>
+								</div>
+
+								<div class="newsDate">
+									<div class="newsMonth heading">Jan</div>
+									<div class="newsDay">11</div>
+								</div>
+								
+								<div>
+									<div class="newsName">by <a href='https://www.reddit.com/u/Kevrlet'>Kevrlet</a> at ?:?? PM</span></div>
+
+									<div class="newsText">I made <b>significant</b> changes to the dungeon code. I tested and everything seems to be working, but let me know if it breaks for you</div>
+								</div>
+							</div>
+						</div>
+						<div class="eseparator"></div>
+						<div class="beseparator">
+							<div class="newsContainer leftDate">
+								<div>
+									<h2 class="newsTitle">Work Resumed</h2>
+								</div>
+
+								<div class="newsDate secondaryContent">
+									<div class="newsMonth heading">Jan</div>
+									<div class="newsDay">1</div>
+								</div>
+								
+								<div>
+									<div class="newsName">by <a href='https://www.reddit.com/u/Kevrlet'>Kevrlet</a> at ?:?? PM</span></div>
+
+									<div class="newsText">I've started work on the website again. It will progress slowly as I am using a terrible loaner laptop, but things will begin to get finished</div>
+								</div>
+							</div>
+						</div>
+						<div class="eseparator"></div>
+						<div class="beseparator">
+							<div class="newsContainer leftDate">
+								<div>
+									<h2 class="newsTitle">To-Do List</h2>
+								</div>
+
+								<div class="newsDate secondaryContent">
+									<div class="newsMonth heading">Jan</div>
+									<div class="newsDay">1</div>
+								</div>
+								
+								<div>
+									<div class="newsName">by <a href='https://www.reddit.com/u/Kevrlet'>Kevrlet</a> at ?:?? PM</span></div>
+
+									<div class="newsText">
+										<p>Make stat calc less ugly</p>
+										<p>Make session value to authenticate inventory changes</p>
+										<p>My account</p>
+										<p>Forgotten Password link</p>
+										<p>Do something with owned characters</p>
+										<p>Team builder</p>
+										<p>Forums</p>
+										<p>Go back through abilities and specify if long-range/auto-hit</p>
+										<p>Ability priority list</p>
+										<p>Rewrite attack code, compile Enemy Attack list</p>
+										<p>Update RM icons</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-3 fixed" id="sidebar">
+				<div class="rightContainer" id="characterContainer">
+					<div class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" id="selCha">Tyro<b class="caret"></b></a>
+						<ul class="dropdown-menu scrollable-menu" id="currChar">
+						</ul>
+					</div>
+					<div class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" id="selLev">1<b class="caret"></b></a>
+						<ul class="dropdown-menu scrollable-menu" id="currLevel">
+						</ul>
+					</div>
+					<div class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" id="selRea">None<b class="caret"></b></a>
+						<ul class="dropdown-menu scrollable-menu" id="currRealm">
+							<li><a href="javascript:changeRealm('None')">None</a></li>
+							<li><a href="javascript:changeRealm('Core')">Core</a></li>
+							<li><a href="javascript:changeRealm('I')">I</a></li>
+							<li><a href="javascript:changeRealm('II')">II</a></li>
+							<li><a href="javascript:changeRealm('III')">III</a></li>
+							<li><a href="javascript:changeRealm('IV')">IV</a></li>
+							<li><a href="javascript:changeRealm('V')">V</a></li>
+							<li><a href="javascript:changeRealm('VI')">VI</a></li>
+							<li><a href="javascript:changeRealm('VII')">VII</a></li>
+							<li><a href="javascript:changeRealm('VIII')">VIII</a></li>
+							<li><a href="javascript:changeRealm('IX')">IX</a></li>
+							<li><a href="javascript:changeRealm('X')">X</a></li>
+							<li><a href="javascript:changeRealm('XII')">XII</a></li>
+							<li><a href="javascript:changeRealm('XIII')">XIII</a></li>
+							<li><a href="javascript:changeRealm('XIV')">XIV</a></li>
+						</ul>
+					</div>
+					<br>
+					<div class="statTable">
+						<table>
+							<tr>
+								<td class="charCell" id="selCha">Tyro</td>
+								<td class="charCell" id="selRea">None</td>
+							</tr>
+							<tr>
+								<td class="charCell">HP</td>
+								<td class="charCell">ATK</td>
+								<td class="charCell">MAG</td>
+							</tr>
+							<tr>
+								<td class="charCell" id="selHP">0</td>
+								<td class="charCell" id="selATK">0</td>
+								<td class="charCell" id="selMAG">0</td>
+							</tr>
+							<tr>
+								<td class="charCell">ACC</td>
+								<td class="charCell">DEF</td>
+								<td class="charCell">RES</td>
+							</tr>
+							<tr>
+								<td class="charCell" id="selACC">0</td>
+								<td class="charCell" id="selDEF">0</td>
+								<td class="charCell" id="selRES">0</td>
+							</tr>
+							<tr>
+								<td class="charCell">EVA</td>
+								<td class="charCell">MND</td>
+								<td class="charCell">SPD</td>
+							</tr>
+							<tr>
+								<td class="charCell" id="selEVA">0</td>
+								<td class="charCell" id="selMND">0</td>
+								<td class="charCell" id="selSPD">0</td>
+							</tr>
+						</table>
+					</div>
+					<button type="button" id="limitButton" class="btn btn-default" onclick="javascript:toggleLimit()">Show Owned</button>
+				</div>
+				<div class="rightContainer">
+					<form action="javascript:doLogin()" class="form-signin" id="loginForm" role="form">
+						<label for="inputEmail" class="sr-only">Username</label>
+						<input type="text" name="username" id="inputUsername" class="form-control" placeholder="Username" required>
+						<span class="dropdown-header"><a href = "javascript:displayRegister()">Don't have an account?</a></span>
+						<label for="inputPassword" class="sr-only">Password</label>
+						<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+						<!--<span class="dropdown-header"><a href = "#">Forgot password?</a></span>-->
+						<div class="checkbox">
+							<label><input type="checkbox" name="rememberCheck" value="remember-me"> Remember me</label>
+						</div>
+						<span class="help-block loginErrors" id="loginErrors"></span>
+						<button class="btn btn-sm btn-primary btn-block" type="submit">Sign in</button>
+					</form>
+					<form action="javascript:doRegister()" class="form-signin" id="registerForm" role="form" style="display: none;">
+						<label for="inputEmail" class="sr-only">Username</label>
+						<input type="text" name="username" id="regUsername" class="form-control" placeholder="Username" required>
+						<label for="inputPassword" class="sr-only">Password</label>
+						<input type="password" name="password" id="regPassword" class="form-control" placeholder="Password" required>
+						<label for="inputPassword" class="sr-only">Confirm Password</label>
+						<input type="password" name="password" id="regPassConf" class="form-control" placeholder="Confirm Password" required>
+						<div class="checkbox">
+							<label><input type="checkbox" name="rememberReg" value="remember-me">Remember me&nbsp;<a href="javascript:doLogOut()">Cancel</a></label>
+						</div>
+						<span class="help-block loginErrors" id="regErrors"></span>
+						<button class="btn btn-sm btn-primary btn-block" type="submit">Register</button>
+					</form>
+					<form action="javascript:doLogOut()" class="form-signin navbar-left" id="logOutForm" role="form" style="display: none;">
+					</form>
+					<div id="loggedUserContainer" style="display: none;">
+						<div class="newsTitle" id="loggedUser">My Account</div>
+						<div><a href="javascript:myAccount()">My Account</a></div>
+						<div><a href="javascript:doLogOut()">Log Out</a></div>
+					</div>
+				</div>
+				<div class="rightContainer">
+					Max Stamina: <br>
+					<div id="mStam"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+	
+	<footer>
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<!-- Function files -->
+		<script type="text/JavaScript" src="doStuff.js"></script>
+		<script>initPage();</script>
+		
+		<!-- Data files -->
+		<script type="text/JavaScript" src="data/items.js" asynch></script>
+		<script type="text/JavaScript" src="data/characters.js" asynch></script>
+		<script type="text/JavaScript" src="data/exp.js" asynch></script>
+		<script type="text/JavaScript" src="data/dungeons.js" asynch></script>
+		<script type="text/JavaScript" src="data/elites.js" asynch></script>
+		<script type="text/JavaScript" src="data/events.js" asynch></script>
+		<script type="text/JavaScript" src="data/weekly.js" asynch></script>
+		<script type="text/JavaScript" src="data/abilities.js" asynch></script>
+		<script type="text/JavaScript" src="data/quests.js" asynch></script>
+		<script type="text/JavaScript" src="data/materia.js" asynch></script>
+		
+		<script src="dist/js/bootstrap.min.js"></script>
+		<!-- fix to make top navbar scrollable on mobile -->
+		<script>$(".navbar-collapse").css({ maxHeight: $(window).height() - $(".navbar-header").height() + "px" });</script>
+		<script>
+			$(window).resize(function() {
+				$(".fixed").css("margin-left", $("#customTables").width());
+				$(".fixed").css("margin-left", $(".table-bordered").width());
+			});
+			$(document).ready(function() {
+				$(".fixed").css("margin-left", $("#customTables").width());
+				$(".fixed").css("margin-left", $(".table-bordered").width());
+			});</script>
+	</footer>
+</html>
